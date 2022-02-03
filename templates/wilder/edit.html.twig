@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Wilder{% endblock %}
+
+{% block body %}
+    <h1>Edit Wilder</h1>
+
+    {{ include('wilder/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('wilder_index') }}">back to list</a>
+
+    {{ include('wilder/_delete_form.html.twig') }}
+{% endblock %}
