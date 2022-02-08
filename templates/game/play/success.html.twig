@@ -1,0 +1,24 @@
+{% extends "/game/layout.html.twig" %}
+
+{% block title %}Bravo !{% endblock %}
+
+{% block portrait %}
+<img id="screen" src="{{ asset('build/images/' ~ wilder.name|lower ~ '.png') }}">
+{% endblock portrait %}
+
+{% block bubble %}
+    <h6 id="success">Bien joué !</h6>
+    <img id="bubble" src="{{ asset('build/images/bubble.png') }}">
+{% endblock bubble %}
+
+{% block replay %}
+<div class="navigation">
+    <a href="/play">
+        <button class="replay">Rejouer</button>
+    </a>
+</div>
+{% endblock replay %}
+
+{% block choices %}{% endblock choices %}
+
+{% block input %}{% endblock input %}

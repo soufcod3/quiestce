@@ -25,48 +25,19 @@ class Wilder
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $promo;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $hair;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $reconversion;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $glasses;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $beard;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $long_hair;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $children;
-
-    /**
      * @ORM\OneToMany(targetEntity=Clues::class, mappedBy="wilder")
      */
     private $clues;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Question::class, mappedBy="wilder")
+     */
+    private $questions;
+
     public function __construct()
     {
         $this->clues = new ArrayCollection();
+        $this->questions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -82,90 +53,6 @@ class Wilder
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getPromo(): ?string
-    {
-        return $this->promo;
-    }
-
-    public function setPromo(string $promo): self
-    {
-        $this->promo = $promo;
-
-        return $this;
-    }
-
-    public function getHair(): ?bool
-    {
-        return $this->hair;
-    }
-
-    public function setHair(?bool $hair): self
-    {
-        $this->hair = $hair;
-
-        return $this;
-    }
-
-    public function getReconversion(): ?bool
-    {
-        return $this->reconversion;
-    }
-
-    public function setReconversion(?bool $reconversion): self
-    {
-        $this->reconversion = $reconversion;
-
-        return $this;
-    }
-
-    public function getGlasses(): ?bool
-    {
-        return $this->glasses;
-    }
-
-    public function setGlasses(?bool $glasses): self
-    {
-        $this->glasses = $glasses;
-
-        return $this;
-    }
-
-    public function getBeard(): ?bool
-    {
-        return $this->beard;
-    }
-
-    public function setBeard(?bool $beard): self
-    {
-        $this->beard = $beard;
-
-        return $this;
-    }
-
-    public function getLongHair(): ?bool
-    {
-        return $this->long_hair;
-    }
-
-    public function setLongHair(?bool $long_hair): self
-    {
-        $this->long_hair = $long_hair;
-
-        return $this;
-    }
-
-    public function getChildren(): ?bool
-    {
-        return $this->children;
-    }
-
-    public function setChildren(?bool $children): self
-    {
-        $this->children = $children;
 
         return $this;
     }
@@ -194,6 +81,36 @@ class Wilder
             // set the owning side to null (unless already changed)
             if ($clue->getWilder() === $this) {
                 $clue->setWilder(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Question[]
+     */
+    public function getQuestions(): Collection
+    {
+        return $this->questions;
+    }
+
+    public function addQuestion(Question $question): self
+    {
+        if (!$this->questions->contains($question)) {
+            $this->questions[] = $question;
+            $question->setWilder($this);
+        }
+
+        return $this;
+    }
+
+    public function removeQuestion(Question $question): self
+    {
+        if ($this->questions->removeElement($question)) {
+            // set the owning side to null (unless already changed)
+            if ($question->getWilder() === $this) {
+                $question->setWilder(null);
             }
         }
 
