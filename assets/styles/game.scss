@@ -1,0 +1,193 @@
+body {
+    max-height: 100%;
+    margin: 0;
+    .logo {
+        text-align: center;
+        padding: 1rem 0;
+        img {
+            width: 11rem;
+        }
+    }
+    .score {
+        margin: 0 auto;
+        text-align: center;
+        background-color: #ffd600;
+        font-size: 1.5rem;
+        width: 6rem;
+        color: white;
+        outline: 3px solid black;
+        border-radius: 5px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        h3 {
+            text-align: center;
+            text-shadow: rgb(0, 0, 0) 3px 0px 0px,
+                rgb(0, 0, 0) 2.83487px 0.981584px 0px,
+                rgb(0, 0, 0) 2.35766px 1.85511px 0px,
+                rgb(0, 0, 0) 1.62091px 2.52441px 0px,
+                rgb(0, 0, 0) 0.705713px 2.91581px 0px,
+                rgb(0, 0, 0) -0.287171px 2.98622px 0px,
+                rgb(0, 0, 0) -1.24844px 2.72789px 0px,
+                rgb(0, 0, 0) -2.07227px 2.16926px 0px,
+                rgb(0, 0, 0) -2.66798px 1.37182px 0px,
+                rgb(0, 0, 0) -2.96998px 0.42336px 0px,
+                rgb(0, 0, 0) -2.94502px -0.571704px 0px,
+                rgb(0, 0, 0) -2.59586px -1.50383px 0px,
+                rgb(0, 0, 0) -1.96093px -2.27041px 0px,
+                rgb(0, 0, 0) -1.11013px -2.78704px 0px,
+                rgb(0, 0, 0) -0.137119px -2.99686px 0px,
+                rgb(0, 0, 0) 0.850987px -2.87677px 0px,
+                rgb(0, 0, 0) 1.74541px -2.43999px 0px,
+                rgb(0, 0, 0) 2.44769px -1.73459px 0px,
+                rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+            margin-bottom: 0;
+        }
+        img {
+            width: 100px;
+        }
+    }
+    .portrait {
+        height: 8rem;
+        width: 13rem;
+        background: white;
+        margin: 0 auto;
+        border: 4px solid black;
+        border-radius: 3px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        img {
+            width: 7rem;
+            bottom: 0;
+            position: absolute;
+            margin: 0 auto;
+        }
+    }
+    .bubble {
+        height: 9rem;
+        text-align: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 17rem;
+        }
+        h6 {
+            width: 15rem;
+            position: absolute;
+            font-size: 1.2rem;
+            padding-top: 1.5rem;
+        }
+    }
+    .choices {
+        .container {
+            width: 15rem;
+            background-color: rgb(247, 247, 247);
+            margin: 0 auto;
+            border: 4px solid rgb(153, 19, 15);
+            border-radius: 3px;
+            padding: 1rem;
+            button:disabled {
+                background-color: rgb(61, 61, 61) !important;
+            }
+            .questions {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                a {
+                    width: 100%;
+                }
+                .question {
+                    width: 100%;
+                    height: 3rem;
+                    border: 3px solid black;
+                    border-radius: 3px;
+                    margin-bottom: 0.5rem;
+                    background-color: #8b2506;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 1rem;
+                }
+            }
+            .clues {
+                display: flex;
+                justify-content: space-between;
+                a {
+                    width: 45%;
+                }
+                .clue {
+                    width: 108%;
+                    height: 3rem;
+                    border: 3px solid black;
+                    border-radius: 3px;
+                    color: white;
+                    background-color: #480955;
+                    font-weight: bold;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    .input {
+        margin: 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        form {
+            margin: 0 0.5rem;
+            input {
+                height: 2rem;
+                border: 3px solid black;
+                border-radius: 5px;
+            }
+            #inputAnswer {
+                padding-left: 1rem;
+                font-size: 1rem;
+            }
+            #go {
+                height: 2.5rem;
+                background-color: #9cb01f;
+                font-weight: bold;
+                color: white;
+            }
+        }
+        a {
+            text-decoration: none;
+            .reload {
+                height: 2.5rem;
+                width: 2.5rem;
+                background-color: #d6501a;
+                font-weight: bold;
+                color: white;
+                border: 3px solid black;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i {
+                    font-weight: bolder;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+    .navigation {
+        text-align: center;
+        a {
+            width: 100%;
+        }
+        button.replay {
+            margin-top: 5rem;
+            width: 14rem;
+            height: 4rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: bolder;
+            border: 3px solid black;
+            border-radius: 4px;
+            background-color: rgb(129, 29, 15);
+            color: white;
+        }
+    }

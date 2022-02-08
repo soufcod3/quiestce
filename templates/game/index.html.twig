@@ -1,20 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Qui est-ce ? Wilders edition{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section class="home">
+    <div id="instr" class="instructions">
+        <img src="{{ asset('build/images/logo.png') }}">
+        <h4>Bonne réponse = 100pts</h4>
+        <h4>Une réponse à une question fait perdre 10pts</h4>
+        <h4>Un indice fait perdre 20pts</h4>
+        <h4>Une mauvaise réponse fait perdre 30pts</h4>
+        <button id="back">Retour</button>
+    </div>
+    
+    <div class="logo">
+        <img src="{{ asset('build/images/logo.png') }}">
+    </div>
+    <div class="score">
+        <h3>{{ score }}</h3>
+    </div>
+    <div class="navigation">
+        <a href="/play">
+            <button id="play">Jouer</button>
+        </a>
+        <button id="instructions">Instructions</button>
+        {% include "game/_reset_form.html.twig" %}
+    </div>
+</section>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/soufiane/Code/QuiEstCe/quiestce/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/soufiane/Code/QuiEstCe/quiestce/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
 {% endblock %}

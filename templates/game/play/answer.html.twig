@@ -1,0 +1,6 @@
+{% extends '/game/layout.html.twig' %}
+
+{% block bubble %}
+    <h6>{{ question.answer }}</h6>
+    <img id="bubble" src="{{ asset('build/images/bubble.png') }}">
+{% endblock %}
